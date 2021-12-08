@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
-
+import bin from "../img/bin.png";
+import pen from "../img/pen.png"
 
 const ToDo = () => {
 
@@ -57,8 +58,8 @@ const ToDo = () => {
     function toggleComplete(id){
         const updatedTodos =[...todos].map((todo) => {
         if (todo.id === id){
-            todo.completed = !todo.completed
-        }
+            todo.completed = !todo.completed;
+        } 
         return todo
       })
 
@@ -83,26 +84,27 @@ const ToDo = () => {
     return ( 
         <div className='todo'>
             <h2>To Do List</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="input-form">
                 <input type='text' onChange={(e) => setTodo(e.target.value)} value={todo} required/>
                 <button type='submit'>Add To Do</button>
             </form>
 
-            {todos.map((todo) => <div key={todo.id}>
+            {todos.map((todo) => <div key={todo.id} className="tasks">
             <input 
             type="checkbox" 
-            onChange={() => toggleComplete(todo.id)} checked={todo.completed}/>
+            onChange={() => toggleComplete(todo.id)} checked={todo.completed} className="task-complete"/>
            
            {todoEdit === todo.id ? (<input 
             type="text" 
             onChange={(e) => seteditText(e.target.value)} value={editText}/>) 
-            : (<div>{todo.text}</div>)}
+            : (<div className={ todo.completed ? 'completed' : 'todo-text' } >{todo.text}</div>)}
             
-            {todoEdit === todo.id ? (<button onClick={() => editTodo(todo.id)}>Done</button>) :
-            (<button onClick={() => setTodoEdit(todo.id)}>Edit Todo</button>) }
+            <div className="task-buttons">
+            {todoEdit === todo.id ? (<button className="edit-button donebtn" onClick={() => editTodo(todo.id)}>Done</button>) :
+            (<button className="edit-button" onClick={() => setTodoEdit(todo.id)}><img src={pen} /></button>) }
              
-            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
-
+            <button className="delete-button" onClick={() => deleteTodo(todo.id)}><img src={bin} /></button>
+             </div>
              </div>)}
            </div>
      );

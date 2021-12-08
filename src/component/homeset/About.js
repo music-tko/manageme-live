@@ -6,7 +6,7 @@ import dashboard from '../img/test account.png'
 
 const About = () => {
     return ( 
-        <main>
+        <main id="about" className="about">
         <div className="divider">
             <h2>Goodbye Unmanageable Paper</h2>
             <p>It's time to say goodbye to your paper planner. </p>

@@ -4,7 +4,7 @@ import tracey from '../img/Tracey.jpg'
 
 const Testimonals = () => {
     return ( 
-        <div className="testi">
+        <div id="testimonials" className="testi">
             <h2>Testimonals</h2>
 
           <div className="testi-profiles">

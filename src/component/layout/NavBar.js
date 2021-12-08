@@ -1,4 +1,4 @@
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 
@@ -8,7 +8,7 @@ const NavBar = () => {
         <nav>
            <div>
              <ul className="mainNav">
-               <li><a href="#">ManageMe</a></li>
+               <li><Link to="/">ManageMe</Link></li>
                <li className="links"><SignedInLinks /></li>
                <li className="links"><SignedOutLinks /></li>
             </ul>
