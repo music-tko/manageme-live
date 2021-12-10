@@ -1,4 +1,17 @@
+import React, { useState } from 'react';
+
 const Register = () => {
+    
+      const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('')
+    const handleAction = (id) => {
+    console.log(id)
+  }
+
+  const handleClick = (e) =>{
+    e.preventDefault();
+    console.log("crisis evaded")
+  }
     return ( 
         <div className="register"> 
         
@@ -19,15 +32,15 @@ const Register = () => {
             <label htmlFor="Email" id="email">
             <p>Email:</p>
             </label>
-            <input type="email" name="email" id="signup-email" />
+            <input type="email" name="email" id="signup-email"  onChange={(e) => setEmail(e.target.value)}/>
             
             <label htmlFor="Password" id="password">
             <p>Password: </p>
             </label>
-            <input type="password" name="password" id="signup-password" />
+            <input type="password" name="password" id="signup-password"  onChange={(e) => setPassword(e.target.value)}/>
            
         </div>
-        <input type="submit" value="Create Account" id="submit-signup" />
+        <button id="submit-signup" onClick={handleAction} handleAction={handleAction}>Create Account</button>
         </form>
         </div>
         </div>

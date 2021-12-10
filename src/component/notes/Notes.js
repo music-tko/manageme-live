@@ -1,32 +1,22 @@
-import React, { Component } from 'react';
-import add from '../img/add-n.png';
 import { Link } from "react-router-dom";
-import { connect } from "react-redux"
 
-class Notes extends Component {
-   render(){
-    console.log(this.props);
-    return (   
-        <div>
-         <h1 className="notes">Notes</h1>
-        
-         <button id="addnotes"><Link to="/notes-create"><img id="addbtn" src={add} /></Link></button>
+const Notes = ({ notes, title }) => {
+    // const notes = props.notes;
+    // const title = props.title;
 
-           <div className="notes-details">
-            <div className="notes-card">
-                <h2 className="notes-title">ll</h2>
-                <p className="notes-content">Time</p>
-            </div>
-            </div>
+     return (
+        <div className="blogs">
+        <h2>{ title }</h2>
+        {notes && notes.map((note) => (
+        <div className="blog-preview" key={note.id}>
+        <Link to={`/notes/${note.id}`}>
+           <h2>{ note.title }</h2>
+           </Link>
+           {/* <button onClick={() => handleClick(note.id)}>delete note</button>  */}
         </div>
-     );
-    }
+        ))}
+        </div>
+    );
 }
 
-const mapStateToProps = (state) => {
-    return{
-        notes: state.note.notes
-    }
-}
- 
-export default connect(mapStateToProps)(Notes);
+export default Notes

@@ -1,5 +1,6 @@
 import Home from './component/Home';
 import './index.css';
+import { useState } from 'react';
 import NavBar from './component/layout/NavBar';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from './component/layout/Footer';
@@ -7,12 +8,13 @@ import Signup from './component/auth/Signup';
 import SignIn from './component/auth/SignIn';
 import Pomodoro from "./component/pomodoro/Pomodoro";
 import Dashboard from "./component/dashboard/Dashboard";
-import Notes from "./component/notes/Notes";
 import ToDo from './component/todos/ToDo';
 import NoteCreate from "./component/notes/NoteCreate";
 import NoteDetails from './component/notes/NoteDetails';
+import NotesList from "./component/notes/NotesList"
 
 function App() {
+
   return (
       <div className="App">
             
@@ -34,9 +36,9 @@ function App() {
           <Routes>
          <Route path='/dashboard' element={<Dashboard />} />
          </Routes>
-         <Routes>
+         {/* <Routes>
          <Route path='/notes' element={<Notes />} />
-         </Routes>
+         </Routes> */}
          <Routes>
          <Route path='/to-do' element={<ToDo />} />
          </Routes>
@@ -44,8 +46,11 @@ function App() {
          <Route path='/notes-create' element={<NoteCreate />} />
          </Routes>
          <Routes>
-         <Route path='/notes-details' element={<NoteDetails />} />
+         <Route path='/notes/:id' element={<NoteDetails />} />
          </Routes>
+         <Routes>
+         <Route path="notes" element={<NotesList/>}/>
+        </Routes>
          <Footer />
          </BrowserRouter>
 

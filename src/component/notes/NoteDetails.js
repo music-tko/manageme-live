@@ -1,37 +1,36 @@
+import { useNavigate, useParams } from "react-router";
+import useFetch from "./useFetch.js";
+
 const NoteDetails = () => {
+  
+        const { id } = useParams();
+        const {data: note, error, isPending} = useFetch("http://localhost:3002/notes/" + id)
+    const navigate = useNavigate();
+
+    const handleClick = () =>{
+        fetch('http://localhost:3002/notes/' + note.id, {
+            method: 'DELETE'
+        }).then(() => {
+            navigate('/notes');
+        })
+    }
+
     return ( 
-        <div>
-            <h2>headers</h2>
+        <div className="note-details">
+          {isPending && <div> Loading</div>}
+          {error && <div>{error}</div>} 
+          {note && 
+          <article>
+              <h2>{note.title}</h2>
+              <div>
+                  <p>{note.body}</p>
+              </div>
+              <button onClick={handleClick}>delete</button>
+          </article>}           
         </div>
-        // const { id } = useParams();
-//     const history = useHistory();
-
-//     const handleClick = () =>{
-//         fetch('http://localhost:8000/blogs/' + blog.id, {
-//             method: 'DELETE'
-//         }).then(() => {
-//             history.push('/');
-//         })
-//     }
-
-//     return ( 
-//         <div className="blog-details">
-//           {isPending && <div> Loading</div>}
-//           {error && <div>{error}</div>} 
-//           {blog && 
-//           <article>
-//               <h2>{ blog.title}</h2>
-//               <p>Written by {blog.author}</p>
-//               <div>
-//                   <p>{blog.body}</p>
-//               </div>
-//               <button onClick={handleClick}>delete</button>
-//           </article>}           
-//         </div>
-//      );
+     );
 // }  const {data: blog, error, isPending} = useFetch("http://localhost:8000/blogs/" + id)
   
-     );
 }
  
 export default NoteDetails;
