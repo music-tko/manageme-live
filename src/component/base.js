@@ -1,5 +1,6 @@
-import firebase from "firebase";
-import 'firebase/auth'
+// import {initializeApp}  from 'firebase/app'
+import firebase from "firebase/app";
+import 'firebase/auth';
 
 export const app = firebase.initializeApp({
   "projectId": "webloginme",

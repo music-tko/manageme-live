@@ -4,11 +4,11 @@ import useFetch from "./useFetch.js";
 const NoteDetails = () => {
   
         const { id } = useParams();
-        const {data: note, error, isPending} = useFetch("http://localhost:3002/notes/" + id)
+        const {data: note, error, isPending} = useFetch("https://manageme-server.herokuapp.com/notes/" + id)
     const navigate = useNavigate();
 
     const handleClick = () =>{
-        fetch('http://localhost:3002/notes/' + note.id, {
+        fetch('https://manageme-server.herokuapp.com/notes/' + note.id, {
             method: 'DELETE'
         }).then(() => {
             navigate('/notes');

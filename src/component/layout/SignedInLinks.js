@@ -1,17 +1,22 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const SignedInLinks = () => {
     return ( 
-        <ul className='navBar-SignIn'>
-            <a href="#"><li>Todo</li></a>
-            <a href="#"><li>Notes</li></a>
-            <a href="#"><li>Calendar</li></a>
-            <a href="#"><li>Budget</li></a>
-            <a href="#"><li>Profile</li></a>
+         <nav>
+           <div>
+             <ul className="mainNav">
+               <li><Link to="/dashboard">ManageMe</Link></li>
+             
+           <li> <NavLink to='/to-do'>Todo</NavLink></li>
+            <li><NavLink to='/notes'>Notes</NavLink></li>
+            <li><NavLink to='/pomodoro'>Pomodoro</NavLink></li>
+            <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
             <a href="#"><li>LogOut</li></a>
-            {/* <li><Link to="">TK</Link></li> */}
-        </ul>
+            </ul>
+           </div>
+        </nav>
+      
      );
 }
  

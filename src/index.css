@@ -1,5 +1,4 @@
-body,
-html {
+body {
 	background: #fff;
 	margin: 0;
 	padding: 0;
@@ -32,7 +31,7 @@ ul {
 
 .navBar-SignIn li,
 .navBar-SignOut li {
-	justify-content: space-between;
+	justify-content: space-around;
 	margin-right: 40px;
 }
 
@@ -165,7 +164,7 @@ h1 {
 }
 
 .task,
-.notes,
+.notes-home,
 .calendar,
 .budget,
 .dashboard {
@@ -210,8 +209,8 @@ h1 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 20px;
 }
-
 .testi h2 {
 	font-size: 30px;
 }
@@ -226,6 +225,7 @@ h1 {
 .testi-profile2,
 .testi-profile3 {
 	margin: 10px;
+	margin-bottom: 40px;
 	width: 190px;
 }
 
@@ -416,7 +416,7 @@ input[type="checkbox"]:checked::before {
 }
 
 #reg form {
-	max-height: 22em;
+	max-height: 20em;
 }
 
 .login {
@@ -424,7 +424,7 @@ input[type="checkbox"]:checked::before {
 }
 
 #login {
-	min-height: 23em;
+	height: 20em;
 }
 
 #signup,
@@ -455,7 +455,8 @@ input[type="checkbox"]:checked::before {
 }
 
 #submit-signup,
-#submit-login {
+#submit-login,
+.google-btn {
 	margin-top: 40px;
 	width: 150px;
 	height: 30px;
@@ -468,6 +469,9 @@ input[type="checkbox"]:checked::before {
 .profile input,
 .profile-login input {
 	width: 310px;
+}
+.google-btn {
+	margin-top: 10px;
 }
 
 /*Notes*/
@@ -659,42 +663,75 @@ input[type="checkbox"]:checked::before {
 	font-weight: 700;
 }
 
-/*Blog*/
+/*Note*/
+.notes {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: 75vh;
+}
 
-.blog-preview {
+.adding {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 5em 0 3em;
+}
+
+.adding button {
+	background-color: mediumturquoise;
+	border-radius: 100%;
+	border: rgb(32, 185, 185);
+	height: 30px;
+	width: 30px;
+	color: mintcream;
+	cursor: pointer;
+}
+
+.note-preview {
 	padding: 10px 16px;
-	margin: 20px 0;
+	width: 30em;
+	margin: 20px 0 0 2.6em;
 	border-bottom: 1px solid rgb(255, 251, 251);
 }
 
-.blog-preview:hover {
+.note-preview:hover {
 	box-shadow: 1px 3px 5px rgba(0, 0, 0, 1);
 }
 
-.blog-preview h2 {
+.note-preview h2 {
 	font-size: 20px;
-	color: #f1356d;
+	color: rgb(4, 205, 255);
 	margin-bottom: 8px;
+	border: transparent;
 }
 
-.blog-preview {
+.note-preview {
 	text-decoration: none;
 }
 
-/*Blog Details*/
+.note-title {
+	text-decoration: underline;
+}
 
-.blog-details h2 {
+/*Note Details*/
+
+.note-details h2 {
 	font-size: 20px;
-	color: #f1356d;
+	color: rgb(4, 205, 255);
 	margin-bottom: 10px;
 }
 
-.blog-details div {
-	margin: 20px 0;
+.note-details {
+	margin: 30px 30px 0 30px;
+	display: flex;
+	justify-content: center;
+	height: 75vh;
 }
 
-.blog-details button {
-	background: #f1356d;
+.note-details button {
+	background: rgb(4, 205, 255);
 	color: aliceblue;
 	border: 0;
 	padding: 8px;
@@ -702,11 +739,15 @@ input[type="checkbox"]:checked::before {
 	cursor: pointer;
 }
 
-/* create new blog form */
+/* create new note form */
 .create {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	max-width: 400px;
 	margin: 0 auto;
 	text-align: center;
+	height: 77.3vh;
 }
 .create label {
 	text-align: left;
@@ -714,7 +755,7 @@ input[type="checkbox"]:checked::before {
 }
 .create h2 {
 	font-size: 20px;
-	color: #f1356d;
+	color: rgb(4, 205, 255);
 	margin-bottom: 30px;
 }
 .create input,
@@ -729,10 +770,65 @@ input[type="checkbox"]:checked::before {
 	color: black;
 }
 .create button {
-	background: #f1356d;
+	background: rgb(4, 205, 255);
 	color: #fff;
 	border: 0;
 	padding: 8px;
 	border-radius: 8px;
 	cursor: pointer;
+}
+
+.profiling {
+	height: 62.5vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.profiling h3 {
+	margin: 0 5em 0 5em;
+}
+
+.profiling button {
+	background-color: #4ebfc9;
+	border-radius: 20px;
+	width: 10em;
+	border-color: #4ec1c9;
+}
+
+.lds-circle {
+	display: inline-block;
+	transform: translateZ(1px);
+}
+.lds-circle > div {
+	display: inline-block;
+	width: 64px;
+	height: 64px;
+	margin: 8px;
+	border-radius: 50%;
+	background: rgb(8, 216, 253);
+	animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+	0%,
+	100% {
+		animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+	}
+	0% {
+		transform: rotateY(0deg);
+	}
+	50% {
+		transform: rotateY(1800deg);
+		animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+	}
+	100% {
+		transform: rotateY(3600deg);
+	}
+}
+
+.loading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }

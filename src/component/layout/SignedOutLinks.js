@@ -1,13 +1,10 @@
 import React from 'react';
-import { NavLink} from 'react-router-dom';
-// import About from '../homeset/About';
-// import Register from '../auth/Signup';
-// import Login from '../auth/SignIn'
-
+import { NavLink, Link} from 'react-router-dom';
 
 const SignOutLinks=()=>{
     return(
-        <ul className="navBar-SignOut">
+        <ul className="mainNav">
+         <li><Link to="/">ManageMe</Link></li>
            <li><NavLink to='/register'>Signup</NavLink></li>
            <li><NavLink to="/login">Login</NavLink></li>
         </ul>

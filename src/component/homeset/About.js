@@ -22,7 +22,7 @@ const About = () => {
          </div>
          </div>
 
-         <div className="notes">
+         <div className="notes-home">
          <img src={notes} alt="" />
          <div className="about-text">
             <h3>Notes</h3>
@@ -34,26 +34,18 @@ const About = () => {
          <img src={dashboard} alt="" />
          <div className="about-text">
             <h3>Dashboard</h3>
-               <p>Your notes, your todo lists, your calendar and your budget <br/> all in one place for your convenience. </p>
+               <p>Have all your things saved in a safe place. No need to worry about your todo's getting jumbled up or lost when they are saved by you, for you.</p>
          </div>
          </div>
 
          <div className="calendar">
          <img src={calendar} alt="" />
          <div className="about-text">
-            <h3>Scheduling</h3>
-               <p>Never miss a meeting or a hang out, integrated with<br/>  Google Calendar
-         Making it compatible across all browsers.</p>
+            <h3>Pomorodo</h3>
+               <p>What better way to beat procrastination than having a set timee to fool around or get down to business</p>
          </div>
          </div>
 
-         <div className="budget">
-         <img src={budget} alt="" />
-         <div className="about-text">
-            <h3>Budget Planning</h3>
-               <p>A simple budget planner to make money management <br/> a lot more easier. Let's make money planning more fun.</p>
-         </div>
-         </div>
          </div>
         
 

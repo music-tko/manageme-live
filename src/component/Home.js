@@ -31,7 +31,7 @@ const Home = () => {
           </header>
           <About />
           <Testimonials />
-          <Footer />
+          
         </div>
      );
 }

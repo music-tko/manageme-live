@@ -1,47 +1,48 @@
-import React, { useState } from 'react';
+import React, { useCallback } from 'react';
+import { GoogleAuth } from './GoogleAuth';
+import { useNavigate } from 'react-router-dom';
+import { app } from '../base';
 
 const Register = () => {
+    let navigate = useNavigate();
+    // const currentUser = useContext(UserContext);
     
-      const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('')
-    const handleAction = (id) => {
-    console.log(id)
-  }
-
-  const handleClick = (e) =>{
-    e.preventDefault();
-    console.log("crisis evaded")
-  }
+    const handleSignUp = useCallback( async e => {
+      e.preventDefault();
+      const { email, password } = e.target.elements;
+      try {
+        await app.auth()
+        .createUserWithEmailAndPassword(email.value, password.value);
+      navigate('/dashboard');
+       } catch(error){
+        alert(error)
+      }
+    }, 
+    )
+    
     return ( 
         <div className="register"> 
         
         <h1>Sign Up</h1>
         <div id="reg">
-        <form action="get" id="signup">
-        <div className="identity">
-          <label htmlFor="Name" id="name"> 
-          <p>Name:</p>
-            <input type="text" name="name" id="signup-name" />
-          </label>
-          <label htmlFor="Surname" id="surname">
-          <p>Surname:</p>
-            <input type="text" name="surname" id="signup-surname" />
-            </label>
-        </div>
+        <form action="get" id="signup" onSubmit={handleSignUp}>
         <div className="profile">
             <label htmlFor="Email" id="email">
             <p>Email:</p>
             </label>
-            <input type="email" name="email" id="signup-email"  onChange={(e) => setEmail(e.target.value)}/>
+            <input type="email" name="email" id="signup-email"  />
             
             <label htmlFor="Password" id="password">
             <p>Password: </p>
             </label>
-            <input type="password" name="password" id="signup-password"  onChange={(e) => setPassword(e.target.value)}/>
+            <input type="password" name="password" id="signup-password" />
            
         </div>
-        <button id="submit-signup" onClick={handleAction} handleAction={handleAction}>Create Account</button>
+        <button id="submit-signup" >Create Account</button>
+       <p> or </p>
+        <GoogleAuth />
         </form>
+         
         </div>
         </div>
      );

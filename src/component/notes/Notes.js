@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
 
 const Notes = ({ notes, title }) => {
-    // const notes = props.notes;
-    // const title = props.title;
-
      return (
-        <div className="blogs">
+        <div className="notes">
+        <div className="adding">
         <h2>{ title }</h2>
+        <Link to="/notes-create"><button className="note-add">+</button></Link>
+        </div>
         {notes && notes.map((note) => (
-        <div className="blog-preview" key={note.id}>
+        <div className="note-preview" key={note.id}>
         <Link to={`/notes/${note.id}`}>
-           <h2>{ note.title }</h2>
+           <h2 className="note-title">{ note.title }</h2>
            </Link>
-           {/* <button onClick={() => handleClick(note.id)}>delete note</button>  */}
         </div>
         ))}
         </div>
