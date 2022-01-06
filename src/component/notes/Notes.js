@@ -1,21 +1,20 @@
-import { Link } from "react-router-dom";
+import React, { useContext } from 'react'
+import { NotesContext } from "../NoteContext"
 
-const Notes = ({ notes, title }) => {
-     return (
-        <div className="notes">
-        <div className="adding">
-        <h2>{ title }</h2>
-        <Link to="/notes-create"><button className="note-add">+</button></Link>
-        </div>
-        {notes && notes.map((note) => (
-        <div className="note-preview" key={note.id}>
-        <Link to={`/notes/${note.id}`}>
-           <h2 className="note-title">{ note.title }</h2>
-           </Link>
-        </div>
-        ))}
-        </div>
-    );
+const Notes = (props) => {
+   const {body, id } = props;
+     const { deleteNote } = useContext(NotesContext);
+
+   return (
+      <div className="notes-details">
+         {/* <div className="note-rows"> */}
+            <div className="notes-card" key={id}>
+               <p className="notes-body">{body}</p>
+               <button className="delete-btn" onClick={() => {deleteNote(id);}}>Delete</button>
+            </div>
+         {/* </div> */}
+      </div>
+   );
 }
 
 export default Notes

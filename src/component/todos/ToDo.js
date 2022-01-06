@@ -96,7 +96,7 @@ const ToDo = () => {
            
            {todoEdit === todo.id ? (<input 
             type="text" 
-            onChange={(e) => seteditText(e.target.value)} value={editText}/>) 
+            onChange={(e) => seteditText(e.target.value)} value={todo.text}/>) 
             : (<div className={ todo.completed ? 'completed' : 'todo-text' } >{todo.text}</div>)}
             
             <div className="task-buttons">

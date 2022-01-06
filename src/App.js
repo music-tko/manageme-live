@@ -7,10 +7,8 @@ import Signup from './component/auth/Signup';
 import SignIn from './component/auth/SignIn';
 import SignedInLinks from './component/layout/SignedInLinks';
 import Pomodoro from "./component/pomodoro/Pomodoro";
-// import Dashboard from "./component/dashboard/Dashboard";
 import ToDo from './component/todos/ToDo';
 import NoteCreate from "./component/notes/NoteCreate";
-import NoteDetails from './component/notes/NoteDetails';
 import NotesList from "./component/notes/NotesList"
 import Profile from './component/dashboard/Profile'
 import PrivateRoute from './component/layout/PrivateRoute';
@@ -62,11 +60,11 @@ function App() {
          </Route>
          </Routes>
 
-        <Routes>
+        {/* <Routes>
          <Route path='/notes/:id' element={<NoteDetails />}>
        <Route element={<PrivateRoute />}/>
          </Route>
-         </Routes>
+         </Routes> */}
 
          <Routes>
          <Route path="/notes" element={<NotesList/>}>

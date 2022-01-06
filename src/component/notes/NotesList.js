@@ -1,17 +1,19 @@
 import Notes from './Notes.js';
-import useFetch from "./useFetch.js";
+// import useFetch from "./useFetch.js";
+import React, { useContext } from "react";
+import { NotesContext } from "../NoteContext"
+import { Link } from "react-router-dom";
 
 
-const Home = () => {
-    const { data: notes, isPending, error} = useFetch('https://manageme-server.herokuapp.com/notes/')
+const NotesList = () => {
+    const { notes } = useContext(NotesContext);
 
-    return ( 
-        <div className="notes">
-          { error && <div>{error}</div>}
-          { isPending && <div class="lds-circle loading"><div></div></div>}
-          {notes&& <Notes notes={notes} title="All Notes" />}
-           </div>
+    return (
+        <div className="notes"> 
+         <button className="adding"><Link to='/notes-create'> + </Link></button>
+                {notes.map((note) => <Notes key={note.id} {...note} /> )}
+        </div>
     )
 }
- 
-export default Home;
+
+export default NotesList;

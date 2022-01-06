@@ -34,7 +34,7 @@ const About = () => {
          <img src={dashboard} alt="" />
          <div className="about-text">
             <h3>Dashboard</h3>
-               <p>Have all your things saved in a safe place. No need to worry about your todo's getting jumbled up or lost when they are saved by you, for you.</p>
+               <p>Have all your things saved in a safe place. No need to worry<br/> about your todo's getting jumbled up or lost when they are saved<br/>  by you, for you.</p>
          </div>
          </div>
 
@@ -42,7 +42,7 @@ const About = () => {
          <img src={calendar} alt="" />
          <div className="about-text">
             <h3>Pomorodo</h3>
-               <p>What better way to beat procrastination than having a set timee to fool around or get down to business</p>
+               <p>What better way to beat procrastination than having a set time<br/> to fool around or get down to business</p>
          </div>
          </div>
 

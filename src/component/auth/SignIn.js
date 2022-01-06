@@ -1,13 +1,19 @@
 import React, { useContext, useCallback } from 'react';
 import { GoogleAuth } from './GoogleAuth';
 import { UserContext } from '../UserContext';
-import { useNavigate, Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { app } from '../base';
 
 const Login = () => {
 
-  let navigate = useNavigate()   
-    const { currentUser } = useContext(UserContext);
+    let navigate = useNavigate()   
+
+    const currentUser  = useContext(UserContext);
+
+    // const handleValidation = () =>{
+
+    // }
+
     const handleLogin = useCallback(
     async event => {
       event.preventDefault();
@@ -23,10 +29,6 @@ const Login = () => {
     },
    )  
   
-    if (currentUser) {
-    return <Navigate to="/dashboard" />;
-  }
-
   return ( 
     <div className="login">
     <h1>Login</h1>
@@ -45,6 +47,7 @@ const Login = () => {
             <button id="submit-login" > Login </button>
             <p>or</p>
             <GoogleAuth />
+          
         </div>
         
     </form>

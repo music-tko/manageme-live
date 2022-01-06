@@ -41,6 +41,7 @@ const Register = () => {
         <button id="submit-signup" >Create Account</button>
        <p> or </p>
         <GoogleAuth />
+        
         </form>
          
         </div>
