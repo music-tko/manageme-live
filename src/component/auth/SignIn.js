@@ -1,4 +1,4 @@
-
+// import React, { useCallback } from "react"
 import { GoogleAuth } from './GoogleAuth';
 import { useNavigate } from 'react-router-dom';
 import { app } from '../base';
@@ -12,18 +12,25 @@ const Login = () => {
 
     // }
 
-    const handleLogin = (e) => {
+  const handleLogin = 
+    async e => {
       e.preventDefault();
       const { email, password } = e.target.elements;
+      try {
+        await
           app.auth().signInWithEmailAndPassword(email.value, password.value);
         navigate("/dashboard");
-      };
+      } catch (error) {
+        alert(error);
+      }
+    }
+   
       
   return ( 
     <div className="login">
     <h1>Login</h1>
    <div id="log-in">
-    <form action="post" id="login" onSubmit={(e) => {handleLogin()}}>
+    <form action="post" id="login" onSubmit={handleLogin}>
                <div className="profile-login">
             <label htmlFor="Email" id="email">
             <p>Email:</p>
