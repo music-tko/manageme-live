@@ -6,7 +6,7 @@ import { app } from '../base';
 const Register = () => {
     let navigate = useNavigate();
     
-    const handleSignUp = () => {
+    const handleSignUp = (e) => {
       e.preventDefault();
       const { email, password } = e.target.elements;
         app.auth().createUserWithEmailAndPassword(email.value, password.value);
@@ -18,7 +18,7 @@ const Register = () => {
         
         <h1>Sign Up</h1>
         <div id="reg">
-        <form action="get" id="signup" onSubmit={handleSignUp}>
+        <form action="get" id="signup" onSubmit={() => {handleSignUp()}}>
         <div className="profile">
             <label htmlFor="Email" id="email">
             <p>Email:</p>

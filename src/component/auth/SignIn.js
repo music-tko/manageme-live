@@ -13,8 +13,8 @@ const Login = () => {
 
     // }
 
-    const handleLogin = () => {
-      event.preventDefault();
+    const handleLogin = (e) => {
+      e.preventDefault();
       const { email, password } = event.target.elements;
           app.auth().signInWithEmailAndPassword(email.value, password.value);
         navigate("/dashboard");
@@ -24,7 +24,7 @@ const Login = () => {
     <div className="login">
     <h1>Login</h1>
    <div id="log-in">
-    <form action="post" id="login" onSubmit={handleLogin}>
+    <form action="post" id="login" onSubmit={(e) => {handleLogin()}}>
                <div className="profile-login">
             <label htmlFor="Email" id="email">
             <p>Email:</p>
