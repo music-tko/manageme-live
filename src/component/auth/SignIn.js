@@ -1,6 +1,6 @@
-import React, { useContext, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { GoogleAuth } from './GoogleAuth';
-import { UserContext } from '../UserContext';
+
 import { useNavigate } from 'react-router-dom';
 import { app } from '../base';
 
@@ -8,27 +8,18 @@ const Login = () => {
 
     let navigate = useNavigate()   
 
-    const currentUser  = useContext(UserContext);
 
     // const handleValidation = () =>{
 
     // }
 
-    const handleLogin = useCallback(
-    async event => {
+    const handleLogin = () => {
       event.preventDefault();
       const { email, password } = event.target.elements;
-      try {
-        await app
-          .auth()
-          .signInWithEmailAndPassword(email.value, password.value);
+          app.auth().signInWithEmailAndPassword(email.value, password.value);
         navigate("/dashboard");
-      } catch (error) {
-        alert(error);
-      }
-    },
-   )  
-  
+      };
+      
   return ( 
     <div className="login">
     <h1>Login</h1>

@@ -1,6 +1,5 @@
 import About from './homeset/About';
 import Testimonials from "./homeset/Testimonials";
-import Footer from './layout/Footer';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {

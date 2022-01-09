@@ -24,7 +24,7 @@ const SignOutLinks = () => {
       </ul>
       <div className="burger-menu">
         <button onClick={handleToggle}>{navbarOpen ? <img className="burg-img" src={burgerClose} alt="burger-menu is closed" /> : <img className="burg-img" src={burgerOpen} alt="burger menu is open" />}</button>
-        <ul className={`menuNav ${navbarOpen ? " showMenu" : "hideMenu"}`}>
+        <ul className={`${navbarOpen ? "showMenu" : "hideMenu"}`}>
           <li class="nav-a">
             <NavLink
               activeClassName="active-link"

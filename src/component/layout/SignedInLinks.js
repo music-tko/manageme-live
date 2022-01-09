@@ -19,11 +19,14 @@ const SignedInLinks = () => {
 		<nav className="navvie">
 			<div>
 			
-					<p>	<Link to='/dashboard'>ManageMe</Link></p>
+					
 					
 				<ul className='mainNav'>
-				
 
+				<li><Link to='/dashboard'>ManageMe</Link></li>
+
+				    <div className="navBar-SignIn">
+			
 					<li>
 						<NavLink to='/to-do'>Todo</NavLink>
 					</li>
@@ -36,9 +39,8 @@ const SignedInLinks = () => {
 					<li>
 						<NavLink to='/dashboard'>Dashboard</NavLink>
 					</li>
-					<a href='#'>
-						<li>LogOut</li>
-					</a>
+					
+					</div>
 				</ul>
 			</div>
 
@@ -58,8 +60,8 @@ const SignedInLinks = () => {
 						/>
 					)}
 				</button>
-				<ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
-					<li class='nav-a'>
+				<ul className={`${navbarOpen ? " showMenu" : "hideMenu"}`}>
+					{/* <li class='nav-a'>
 						<NavLink
 							activeClassName='active-link'
 							onClick={() => closeMenu()}
@@ -69,7 +71,7 @@ const SignedInLinks = () => {
 							exact>
 							ManageMe
 						</NavLink>
-					</li>
+					</li> */}
 
 					<li class='nav-a'>
 						<NavLink

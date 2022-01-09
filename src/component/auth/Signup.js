@@ -1,24 +1,17 @@
-import React, { useCallback } from 'react';
+
 import { GoogleAuth } from './GoogleAuth';
 import { useNavigate } from 'react-router-dom';
 import { app } from '../base';
 
 const Register = () => {
     let navigate = useNavigate();
-    // const currentUser = useContext(UserContext);
     
-    const handleSignUp = useCallback( async e => {
+    const handleSignUp = () => {
       e.preventDefault();
       const { email, password } = e.target.elements;
-      try {
-        await app.auth()
-        .createUserWithEmailAndPassword(email.value, password.value);
+        app.auth().createUserWithEmailAndPassword(email.value, password.value);
       navigate('/dashboard');
-       } catch(error){
-        alert(error)
-      }
-    }, 
-    )
+     }   
     
     return ( 
         <div className="register"> 

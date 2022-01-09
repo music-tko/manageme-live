@@ -7,6 +7,7 @@ body {
 html {
 	overflow-x: hidden;
 }
+
 nav {
 	margin: 0;
 	padding: 10px;
@@ -27,14 +28,13 @@ ul {
 	display: none;
 }
 
-.navBar-SignIn li,
-.navBar-SignOut li {
-	justify-content: space-around;
+.navBar-SignIn,
+.navBar-SignOut {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 	margin-right: 40px;
-}
-
-.navBar-SignIn {
-	display: none;
+	gap: 50px;
 }
 
 .bg-img {
@@ -478,38 +478,44 @@ input[type="checkbox"]:checked::before {
 	height: 100vh;
 	overflow-x: scroll;
 	display: flex;
-	flex-wrap: wrap;
-	gap: 0.4em;
 }
 
-.notes-details {
+.notes-sect {
 	display: flex;
 	flex-wrap: wrap;
+	margin: 10px;
+	gap: 10px;
+	align-items: flex-start;
 }
 
 .notes-card {
-	padding: 10px 16px;
-	margin: 20px 0;
+	padding: 10px 16px 16px 10px;
+	margin: 15px 0;
 	border-bottom: 1px solid rgb(255, 251, 251);
 	box-shadow: 1px 3px 5px rgba(0, 0, 0, 1);
-	min-width: 20vw;
+	width: 300px;
+	height: 100px;
 	background-color: rgb(30, 151, 151);
+	overflow: auto;
+	word-wrap: break-word;
 }
 
-.notes-card p {
-	max-width: 20vw;
-}
-
-.notes-card h2 {
-	font-size: 25px;
-	margin-bottom: 8px;
-}
+/* .notes-body {
+	width: 180px;
+} */
 
 .adding {
-	width: 2em;
+	width: 50px;
+	height: 20px;
 	border-color: transparent;
 	background-color: rgb(30, 151, 151);
+	border-radius: 20px;
+}
+
+.add-p {
 	color: white;
+	text-decoration: none;
+	text-align: center;
 }
 
 .delete-btn {
@@ -827,27 +833,25 @@ input[type="checkbox"]:checked::before {
 		border: none;
 	}
 
-	.menuNav {
+	.showMenu {
 		overflow-y: scroll;
 		list-style: none;
 		position: fixed;
 		top: 0;
 		background: rgba(37, 195, 201, 0.952);
-		right: 0;
-		bottom: 0;
+		left: 0;
 		height: 100vh;
 		overflow: hidden;
-		width: 280px;
 		z-index: 9;
 	}
 
-	.menuNav li:first-child {
-		margin-top: 5rem;
+	.burger-menu ul {
+		margin-top: 4rem;
 	}
 
-	.menuNav li {
+	.showMenu {
 		display: block;
-		padding: 10px 40px;
+		padding: 30px 40px;
 		text-decoration: none;
 		color: white;
 		text-transform: uppercase;
@@ -855,14 +859,18 @@ input[type="checkbox"]:checked::before {
 	}
 
 	.hideMenu {
-		position: relative;
-		right: 500px;
+		display: none;
 	}
 
 	.navBar-SignOut,
-	.mainNav {
+	.navBar-SignIn {
 		display: none;
 	}
+
+	/* .showMenu ul {
+		display: flex;
+		flex-direction: column;
+	} */
 
 	.showMenu {
 		width: 100%;

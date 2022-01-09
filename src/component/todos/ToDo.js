@@ -101,9 +101,9 @@ const ToDo = () => {
             
             <div className="task-buttons">
             {todoEdit === todo.id ? (<button className="edit-button donebtn" onClick={() => editTodo(todo.id)}>Done</button>) :
-            (<button className="edit-button" onClick={() => setTodoEdit(todo.id)}><img src={pen} /></button>) }
+            (<button className="edit-button" onClick={() => setTodoEdit(todo.id)}><img src={pen} alt="pen for editing"/></button>) }
              
-            <button className="delete-button" onClick={() => deleteTodo(todo.id)}><img src={bin} /></button>
+            <button className="delete-button" onClick={() => deleteTodo(todo.id)}><img src={bin} alt="bin for deleting" /></button>
              </div>
              </div>)}
            </div>

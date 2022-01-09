@@ -10,8 +10,11 @@ const NotesList = () => {
 
     return (
         <div className="notes"> 
-         <button className="adding"><Link to='/notes-create'> + </Link></button>
+         <button className="adding"><Link to='/notes-create' className="add-p">+ Add</Link></button>
+         <br />
+         <div className="note-sect">
                 {notes.map((note) => <Notes key={note.id} {...note} /> )}
+        </div>
         </div>
     )
 }
