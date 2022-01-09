@@ -1,7 +1,6 @@
 import calendar from '../img/calendar.jpg'
 import notes from '../img/notes app.png'
 import todolist from '../img/todo list.png'
-import budget from '../img/budget.png'
 import dashboard from '../img/test account.png'
 
 const About = () => {

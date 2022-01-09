@@ -1,6 +1,5 @@
-import React, { useCallback } from 'react';
-import { GoogleAuth } from './GoogleAuth';
 
+import { GoogleAuth } from './GoogleAuth';
 import { useNavigate } from 'react-router-dom';
 import { app } from '../base';
 
