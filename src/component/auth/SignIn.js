@@ -15,7 +15,7 @@ const Login = () => {
 
     const handleLogin = (e) => {
       e.preventDefault();
-      const { email, password } = event.target.elements;
+      const { email, password } = e.target.elements;
           app.auth().signInWithEmailAndPassword(email.value, password.value);
         navigate("/dashboard");
       };
