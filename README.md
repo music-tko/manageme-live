@@ -24,7 +24,7 @@
 <h3 align="center">Compliments To You</h3>
 
   <p align="center">
-    project_description
+ 
     <br />
     <a href="https://github.com/music-tko/manageme-live"><strong>Explore the docs »</strong></a>
     <br />
@@ -116,7 +116,7 @@ Tablet Version Of Website Achieved with Media Queries
 
 Thando Khoase - [@ThayDevToBe](https://twitter.com/ThayDevToBe) - thandokhoase26@gmail.com
 
-Project Link: [Live Site](https://complimentstoyou.vercel.app/)
+Project Link: [Live Site](https://manageme.vercel.app/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
