@@ -16,12 +16,11 @@
 
 
 <!-- PROJECT LOGO -->
-
 <div align="center">
   <a href="https://github.com/music-tko/manageme-live">
 <p> ManageMe </p>  </a>
 
-<h3 align="center">Compliments To You</h3>
+<h3 align="center">Manage Me</h3>
 
   <p align="center">
  
