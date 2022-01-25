@@ -16,7 +16,7 @@
 
 
 <!-- PROJECT LOGO -->
-<br />
+
 <div align="center">
   <a href="https://github.com/music-tko/manageme-live">
 <p> ManageMe </p>  </a>
