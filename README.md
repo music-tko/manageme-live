@@ -1,4 +1,4 @@
-# Compliments
+# Manage Me
 
 <div id="top"></div>
 
@@ -19,7 +19,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/music-tko/manageme-live">
-<p> Compliments To You </p>  </a>
+<p> ManageMe </p>  </a>
 
 <h3 align="center">Compliments To You</h3>
 
